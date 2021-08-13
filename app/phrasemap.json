@@ -1,0 +1,237 @@
+{
+  "default": 
+  {
+    "voiceInfo": {
+      "lang": "en-US",
+      "speaker": "V2",
+      "speed": 0.28,
+      "variation": 4
+    },
+
+    "phrases": 
+    {
+      "greeting": 
+      {
+        "first":
+      [ { "text": "Hello! Thank you for calling ACME Insurance claims help line. My name is Dasha. I will be your artificially intelligent agent today. Can you please introduce yourself?" } ],
+      "repeat":
+      [ {"text": "I was just saying, can you please introduce yourself? " } ]
+      },
+
+      "pleased_meet": 
+      {
+        "first":
+      [
+        { "text": "Pleased to meet you " },
+        { "id": "name", "type": "dynamic" },
+        { "text": ". How can I help you today? " }
+      ],
+      "repeat":
+      [
+        {"text": "I was just saying. How can I help you today " },
+        {"id": "name", "type": "dynamic" },
+        { "text": "?" }
+        ]
+      },
+
+      "what_policy": 
+      {
+        "first":
+      [
+        { "text": "Can you please share the policy number you'd like to check. " }
+      ],
+      "repeat":
+      [
+        {"text": "Lets try this again. What is the policy number you would like to check?" }
+        ]
+      },
+
+    "what_policy_2": [
+      { "text": "Lets try this again. What is the policy number you would like to check?" }
+      ],
+    
+
+      "confirm_policy": 
+      {
+        "first":
+      [
+        { "text": "Thank you. Let's make sure I got the number correctly. " },
+        { "id": "policy_read", "type": "dynamic" },
+        { "text": ". Is this right? " }
+      ],
+      "repeat":
+      [
+        {"text": "I was just saying. You want to check policy number" },
+        {"id": "policy_read", "type": "dynamic" },
+        { "text": ". Is that correct?" }
+        ]
+      },
+
+      "verification_result": 
+      {
+        "first":
+      [
+        { "text": "Okay, let me see here. It looks like " },
+        { "id": "policy_status", "type": "dynamic" },
+        { "text": ". Is there anything else I can help you with today? " }
+      ],
+      "repeat":
+      [
+        {"text": "I was just saying. It looks like " },
+        {"id": "policy_status", "type": "dynamic" },
+        { "text": ". Is there anything else I can help you with today?" }
+        ]
+      },
+
+      "can_help": 
+      {
+        "first":
+      [
+        { "text": "How can I help you?" }
+      ]
+      },
+
+      "rate_negative": 
+      {
+        "first":
+      [
+        { "text": "I am so sorry to hear that you did not enjoy the experience. Can you please tell me what you feel could have been done better?" }
+      ],
+      "repeat":
+      [
+        {"text": "I said, sorry you feel this way. What might I have done btter?" }
+        ]
+      },
+      
+
+      "claim_status": 
+      {
+        "first":
+      [
+        { "text": "It looks like " },
+        { "id": "claim", "type": "dynamic" },
+        { "text": "You can redeem it if you like. Is there anything else I can help you with today? " }
+      ],
+      "repeat":
+      [
+        {"text": "We've already gone over your claim. There are no other claims associated with this account. Anything else I can help you with?" }
+        ]
+      },
+
+
+      "redeem_claim": 
+      {
+        "first":
+      [
+        { "text": "Absolutely. It looks like there is a bank account tied to your account with us. With your sign-off we will refund the claim value to your account. Would you like me to initiate this process?" }
+      ],
+      "repeat":
+      [
+        {"text": "I'm sorry, your claim has already been redeemed. What else can I help you with? " }
+        ]
+      },
+
+    
+      "i_will_call_back": 
+      [{ "text": "Okay, I'll call you later. Bye!" }],
+      "hello": 
+      {
+        "random": [
+          [{ "text": "Hello" }],
+          [{ "text": "Umm, hello?" }],
+          [{ "text": "Are you there?" }]
+        ]
+      },
+
+      "when_callback": [{ "text": "When can I call you back?" }],
+      "i_will_wait": 
+      {
+        "random": [
+          [{ "text": "Okay, I'll wait" }],
+          [{ "text": "Sure, I'll wait" }],
+          [{ "text": "Okay, no problem!" }]
+        ]
+      },
+
+      "bye_rate": 
+      {
+        "first": 
+        [{ "text": "I'm glad I could be of help. How would you rate our interaction on the scale of 0 to 10?" }],
+        "repeat": 
+            [{ "text": "I was saying. How would you rate our interaction on the scale of 0 to 10?" }]
+      },
+
+
+
+      "i_can_hear_you": [{ "text": "Yes, I hear you" }],
+      "dont_understand": {
+        "random": [
+          [{ "text": "Sorry, could you say it again?" }],
+          [
+            {
+              "text": "Sorry, the connection dropped for a second. Could you say that again?"
+            }
+          ],
+          [{ "text": "Sorry, I didn't quite catch that." }],
+          [{ "text": "Could you say it one more time?" }]
+        ]
+      },
+      
+      "dont_understand_hangup": [
+        {
+          "text": "I'm sorry I can barely hear you. I'll try to call you later! Bye!"
+        }
+      ],
+      "dont_understand_forward": [
+        {
+          "text": "I'm sorry, let me transfer you to another agent. Please stand by!"
+        }
+      ],
+      "mhm": [{ "text": "Mgm..." }],
+      "yes_i_am_a_robot": [
+        {
+          "text": "Actually I am an advanced AI. Just don't tell my boss or I'll be out of a job."
+        }
+      ],
+      "is_that_all": [{ "text": "Is that all?" }],
+      "repeat_question": [{ "text": "Can you repeat the question, please?" }]
+    },
+    
+    "types": {},
+    "macros": 
+    {
+      "greeting": {},
+      "pleased_meet": {},
+      "what_policy": {},
+      "what_policy_2": {},
+      "verification_result": {},
+      "confirm_policy": {},
+      "rate_negative": {},
+      "claim_status": {},      
+      "redeem_claim": {},  
+      "can_help": {},
+      "bye_rate": {},
+      "yes": {},
+      "no": {},
+      "i_will_call_back": {},
+      "see_you_soon": {},
+      "hello": {},
+      "when_callback": {},
+      "i_said": {},
+      "sorry_wont_call": {},
+      "i_will_wait": {},
+      "i_can_hear_you": {},
+      "dont_understand": {},
+      "dont_understand_hangup": {},
+      "dont_understand_forward": {},
+      "mhm": {},
+      "yes_i_am_a_robot": {},
+      "is_that_all": {},
+      "name": {},
+      "will_help": {},
+      "how_much": {},
+      "confirm_food_order": {},
+      "repeat_question": {}
+    }
+  }
+}
