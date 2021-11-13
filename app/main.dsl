@@ -31,9 +31,46 @@ start node root
     }
     transitions // specifies to which nodes the conversation goes from here 
     {
-        node_2: goto node_2 on #messageHasData("name"); // when Dasha identifies that the user's phrase contains "name" data, as specified in the named entities section of data.json, a transfer to node node_2 happens 
+        yes: goto policy_accepted on #messageHasIntent("yes");
+        no: goto policy_rejected on #messageHasIntent("no"); // when Dasha identifies that the user's phrase contains "name" data, as specified in the named entities section of data.json, a transfer to node node_2 happens 
     }
 }
+
+node policy_accepted
+{
+    do 
+    {
+        #say("policy_accepted"); 
+        wait*;
+    }
+    transitions
+    {
+        no: goto  bye on #messageHasData("no");
+    }
+}
+
+node policy_rejected
+{
+    do 
+    {
+        #say("policy_rejected"); 
+        wait*;
+    }
+    transitions
+    {
+        no: goto  bye on #messageHasData("no");
+    }
+}
+
+node bye
+{
+    do 
+    {
+        #say("bye");
+        exit;
+    }
+}
+
 
 node node_2
 {
@@ -80,7 +117,7 @@ node policy_2
         set $policy_number = #messageGetData("policy")[0]?.value??"";
         set $policy_read = external convert_policy($policy_number);
         #log($policy_read);
-        #say("confirm_policy" , {policy_read: $policy_read} );
+       // #say("confirm_policy" , {policy_read: $policy_read} );
         wait*;
     }
     transitions
@@ -118,7 +155,7 @@ node bye_rate
 {
     do
     {
-        #say("bye_rate");
+        //#say("bye_rate");
         wait*;
     }
     transitions
@@ -184,7 +221,7 @@ node neg_bye
 {
     do
     {
-        #sayText("Thank you for sahring and thank you for your time. Please call back if you have any more questions. Bye!");
+        #sayText("Thank you for sharing and thank you for your time. Please call back if you have any more questions. Bye!");
         exit;
     }
 }

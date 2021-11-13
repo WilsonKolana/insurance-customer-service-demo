@@ -4,7 +4,7 @@
     "voiceInfo": {
       "lang": "en-US",
       "speaker": "V2",
-      "speed": 0.28,
+      "speed": 0.22,
       "variation": 4
     },
 
@@ -13,9 +13,9 @@
       "greeting": 
       {
         "first":
-      [ { "text": "Hello! Thank you for calling ACME Insurance claims help line. My name is Dasha. I will be your artificially intelligent agent today. Can you please introduce yourself?" } ],
+        [{"text":"Hi Wilson! Thank you for calling Noodle Insurance onboarding help line. My name is Stacy. I will be your agent today. Based on our calculations, we have a policy of twenty thousands rands payout for 25 rands per month premium. Would you like this policy?"}],
       "repeat":
-      [ {"text": "I was just saying, can you please introduce yourself? " } ]
+      [ {"text": "I was just saying,Noodle can offer you a policy of twenty thousands rands payout for 25 rands per month premium. Would you like this policy?" } ]
       },
 
       "pleased_meet": 
@@ -51,20 +51,32 @@
       ],
     
 
-      "confirm_policy": 
+      "policy_accepted": 
       {
         "first":
       [
-        { "text": "Thank you. Let's make sure I got the number correctly. " },
-        { "id": "policy_read", "type": "dynamic" },
-        { "text": ". Is this right? " }
+        { "text": "Thank you again for taking a policy with us. We will send you an sms with further details of your policy. Do you have any questions for me?"}
+  
       ],
       "repeat":
       [
-        {"text": "I was just saying. You want to check policy number" },
-        {"id": "policy_read", "type": "dynamic" },
-        { "text": ". Is that correct?" }
-        ]
+        {"text": "I was saying. Thank you for taking the policy with us. We will send you an sms with further details of your policy. Any questions you may have?"}
+
+       ]
+      },
+
+      "policy_rejected": 
+      {
+        "first":
+      [
+        { "text": "Thank you again for considering us. We continously review our cover options so we really hope to have something that suites better next time. Bye!"}
+  
+      ],
+      "repeat":
+      [
+        {"text": "I was saying. We continously review our cover options and we will be happy to have something that resonates with your needs next time. Bye!"}
+
+       ]
       },
 
       "verification_result": 
@@ -153,12 +165,12 @@
         ]
       },
 
-      "bye_rate": 
+      "bye": 
       {
         "first": 
-        [{ "text": "I'm glad I could be of help. How would you rate our interaction on the scale of 0 to 10?" }],
+        [{ "text": "I'm glad I could be of help. Bye!" }],
         "repeat": 
-            [{ "text": "I was saying. How would you rate our interaction on the scale of 0 to 10?" }]
+            [{ "text": "I was saying. It was nice helping you. Bye Bye!" }]
       },
 
 
@@ -205,12 +217,13 @@
       "what_policy": {},
       "what_policy_2": {},
       "verification_result": {},
-      "confirm_policy": {},
+      "policy_accepted": {},
+      "policy_rejected":{},
       "rate_negative": {},
       "claim_status": {},      
       "redeem_claim": {},  
       "can_help": {},
-      "bye_rate": {},
+      "bye": {},
       "yes": {},
       "no": {},
       "i_will_call_back": {},
